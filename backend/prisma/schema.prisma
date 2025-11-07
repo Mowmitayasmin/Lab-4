@@ -1,0 +1,21 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model Department {
+  id        Int     @id @default(autoincrement())
+  department String
+  employees Json
+}
+
+model Role {
+  id          Int     @id @default(autoincrement())
+  title       String
+  description String
+}

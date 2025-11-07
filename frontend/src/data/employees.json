@@ -1,0 +1,105 @@
+{
+  "departments": [
+    {
+      "id": 1,
+      "department": "Administration",
+      "employees": [
+        { "id": 1, "name": "Zoë Robins" },
+        { "id": 2, "name": "Madeleine Madden" }
+      ]
+    },
+    {
+      "id": 2,
+      "department": "Audit",
+      "employees": [
+        { "id": 1, "name": "Josha Sadowski" },
+        { "id": 2, "name": "Kate Fleetwood" }
+      ]
+    },
+    {
+      "id": 3,
+      "department": "BankingOperations",
+      "employees": [
+        { "id": 1, "name": "Priyanka Bose" },
+        { "id": 2, "name": "Hammed Animashaun" },
+        { "id": 3, "name": "Álvaro Morte" },
+        { "id": 4, "name": "Taylor Napier" },
+        { "id": 5, "name": "Alan Simmonds" }
+      ]
+    },
+    {
+      "id": 4,
+      "department": "Communications",
+      "employees": [
+        { "id": 1, "name": "Gil Cardinal" },
+        { "id": 2, "name": "Richard J. Lewis" }
+      ]
+    },
+    {
+      "id": 5,
+      "department": "CorporateServices",
+      "employees": [
+        { "id": 1, "name": "Randy Bradshaw" },
+        { "id": 2, "name": "Tracey Cook" },
+        { "id": 3, "name": "Lubomir Mykytiuk" }
+      ]
+    },
+    {
+      "id": 6,
+      "department": "Facilities",
+      "employees": [
+        { "id": 1, "name": "Dakota House" },
+        { "id": 2, "name": "Lori Lea Okemah" },
+        { "id": 3, "name": "Renae Morrisseau" },
+        { "id": 4, "name": "Rick Belcourt" }
+      ]
+    },
+    {
+      "id": 7,
+      "department": "FinancialServices",
+      "employees": [
+        { "id": 1, "name": "Selina Hanusa" },
+        { "id": 2, "name": "Buffy Gaudry" },
+        { "id": 3, "name": "Shaneen Ann Fox" },
+        { "id": 4, "name": "Allan Little" },
+        { "id": 5, "name": "Danny Rabbit" }
+      ]
+    },
+    {
+      "id": 8,
+      "department": "HumanResources",
+      "employees": [
+        { "id": 1, "name": "Jesse Ed aure" },
+        { "id": 2, "name": "Stacy Da Silva" },
+        { "id": 3, "name": "Vladimír Valenta" },
+        { "id": 4, "name": "Samone Sayeses-Whitney" },
+        { "id": 5, "name": "Paul Coeur" }
+      ]
+    },
+    {
+      "id": 9,
+      "department": "InformationTechnology",
+      "employees": [
+        { "id": 1, "name": "Graham Greene" },
+        { "id": 2, "name": "Sandika Evergreen" },
+        { "id": 3, "name": "Jennifer Rodriguez" }
+      ]
+    },
+    {
+      "id": 10,
+      "department": "ItTechnician",
+      "employees": [
+        { "id": 1, "name": "Aiyana Littlebear" },
+        { "id": 2, "name": "Inara Thunderbird" },
+        { "id": 3, "name": "Kaya Runningbrook" },
+        { "id": 4, "name": "Elara Firehawk" },
+        { "id": 5, "name": "Siona Moonflower" },
+        { "id": 6, "name": "Kaiyu Greywolf" },
+        { "id": 7, "name": "Ayawamat Nightwind" },
+        { "id": 8, "name": "Tala Braveheart" },
+        { "id": 9, "name": "Iniko Stonebear" },
+        { "id": 10, "name": "Onatah Redhawk" }
+      ]
+    }
+  ]
+}

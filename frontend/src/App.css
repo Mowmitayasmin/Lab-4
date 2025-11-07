@@ -1,0 +1,19 @@
+html {
+  font-family: "Arial", sans-serif;
+}
+
+ul {
+  text-decoration: none;
+}
+
+.links span {
+  margin-right: 8px;
+}
+
+.employee {
+  list-style-type: none;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 2.5px;
+  border: 1px solid green;
+}

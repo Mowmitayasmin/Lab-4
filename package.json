@@ -1,0 +1,18 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev": "npm-run-all --parallel dev:*",
+    "install:frontend": "npm install --prefix frontend",
+    "install:backend": "npm install --prefix backend"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

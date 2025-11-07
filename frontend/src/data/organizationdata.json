@@ -1,0 +1,174 @@
+{
+  "roles": [
+    {
+      "id": 1,
+      "title": "CEO/Chair of Board",
+      "description": "A chief executive officer, the highest-ranking person in a company or other institution, ultimately responsible for making managerial decisions."
+    },
+    {
+      "id": 2,
+      "title": "COO/VP Operations",
+      "description": "The chief operating officer (COO) is responsible for executing and implementing the operational directives set by the CEO and the board of directors."
+    },
+    {
+      "id": 3,
+      "title": "CFO/VP Administration",
+      "description": "A chief financial officer, a senior executive with responsibility for the financial affairs of a corporation or other institution. The vice president of administration position is responsible for directing all of the administrative functions of the corporation in accordance with industry standards, where applicable, regulatory agencies, as appropriate and company objectives and policies."
+    },
+    {
+      "id": 4,
+      "title": "CIO",
+      "description": "Chief Information Officer (CIO), chief digital information officer (CDIO) or information technology (IT) director is a job title commonly given to the most senior executive in a bank responsible for the traditional information technology and computer systems that support bank goals."
+    },
+    {
+      "id": 5,
+      "title": "VP Client Services",
+      "description": "Responsible for the Consumer Banking division performing a variety of roles including lending, investing, risk management, marketing, and technology. Their team provides a suite of solutions to help retail and commercial customers meet their financial goals."
+    },
+    {
+      "id": 6,
+      "title": "VP Marketing",
+      "description": "Responsible for the overall strategic marketing plans for an entire organization in order to attract potential customers and retain existing ones."
+    },
+    {
+      "id": 7,
+      "title": "Director Human Resources",
+      "description": "Responsible for organizational development, recruitment and staffing, employment law, performance management, employee relations, and compensation and benefits."
+    },
+    {
+      "id": 8,
+      "title": "Director Financial and Audit Services",
+      "description": "Sometimes called a compliance manager, ensures that a company is conducting its business in compliance with laws, regulations, and professional standards."
+    },
+    {
+      "id": 9,
+      "title": "Director Legal Services/General Counsel",
+      "description": "The senior executive managing legal affairs for the company."
+    },
+    {
+      "id": 10,
+      "title": "Director Information Technology",
+      "description": "Manages IT infrastructure, operations, and services, ensuring that businesses and individuals can access and make use of data and services."
+    },
+    {
+      "id": 11,
+      "title": "Director Information Security and CISO",
+      "description": "A chief information security officer (CISO) is the senior-level executive responsible for establishing and maintaining the bank's security vision, strategy, and program to ensure information assets and technologies are adequately protected."
+    },
+    {
+      "id": 12,
+      "title": "Director Accounting",
+      "description": "Responsible for analysis and reconciliation of accounts and in development and implementation of accounting policies, procedures, and controls."
+    },
+    {
+      "id": 13,
+      "title": "Director Physical Security",
+      "description": "Responsible for identifying, assessing, and integrating physical security operations, technology, and policy solutions at the organization."
+    },
+    {
+      "id": 14,
+      "title": "Manager, Business Continuity and Disaster Recovery",
+      "description": "Develops, maintains, and implements business continuity and disaster recovery strategies, including risk assessments, business impact analyses, and documentation of procedures."
+    },
+    {
+      "id": 15,
+      "title": "Manager, Internal Audit",
+      "description": "Performs full audits including risk management, control management, and assessing financial reliability to ensure compliance within company systems."
+    },
+    {
+      "id": 16,
+      "title": "Manager, Security Architecture",
+      "description": "Designs and oversees the implementation of security measures for an organization's information systems, ensuring compliance with policies and resistance to threats."
+    },
+    {
+      "id": 17,
+      "title": "Manager, Operational Risk",
+      "description": "Monitors, handles, and measures operational and economic risk exposures to minimize risk and place appropriate controls in place."
+    },
+    {
+      "id": 18,
+      "title": "Manager Purchasing",
+      "description": "Leads global procurement efforts to maximize value from suppliers and support business objectives."
+    },
+    {
+      "id": 19,
+      "title": "Manager, Customer Experience and Community Engagement",
+      "description": "Improves customer experiences to foster loyalty and increase satisfaction through high-quality interactions."
+    },
+    {
+      "id": 20,
+      "title": "Manager of Sales",
+      "description": "Leads a sales team by providing training, setting sales goals, analyzing data, and building the team."
+    },
+    {
+      "id": 21,
+      "title": "Manager of Marketing",
+      "description": "Develops and executes strategic marketing plans to attract potential customers and retain existing ones."
+    },
+    {
+      "id": 22,
+      "title": "Manager, IT End User Service Desk",
+      "description": "Manages daily operations of the service desk, leads the team, and ensures continuous improvement of service."
+    },
+    {
+      "id": 23,
+      "title": "Manager, End User Computing",
+      "description": "Provides operational day-to-day support for end-user computing services across the organization."
+    },
+    {
+      "id": 24,
+      "title": "Manager, IT Telecom, and Infrastructure",
+      "description": "Oversees daily operations of telecom and infrastructure support staff, ensuring business and IT service needs are met."
+    },
+    {
+      "id": 25,
+      "title": "Manager, Data Center and Hosting Services",
+      "description": "Manages day-to-day operations of the datacenter, contracts cloud services, and ensures data availability."
+    },
+    {
+      "id": 26,
+      "title": "Manager, Risk Management",
+      "description": "Identifies, assesses, and mitigates risks that could impact an organization's assets, profitability, or existence."
+    },
+    {
+      "id": 27,
+      "title": "Incident Coordinator",
+      "description": "Manages unplanned interruptions, malfunctions, and IT service issues, ensuring restoration of services and reporting to management."
+    },
+    {
+      "id": 28,
+      "title": "Service Desk Analyst",
+      "description": "First point of contact for technical issues, troubleshooting ATMs, applications, and software/hardware compatibility problems."
+    },
+    {
+      "id": 29,
+      "title": "Deskside and Application Support",
+      "description": "Provides expert IT advice and support to internal employees, manages incident and change management processes, and delivers onsite technical support."
+    },
+    {
+      "id": 30,
+      "title": "Network Administrator",
+      "description": "Maintains, troubleshoots, and administers LANs, WANs, mainframe networks, and workstations. Leads network infrastructure staff and collaborates on security upgrades."
+    },
+    {
+      "id": 31,
+      "title": "Network Infrastructure Technician",
+      "description": "Monitors network infrastructure, applies approved changes, documents outcomes, and supports tier 2 and tier 3 incidents."
+    },
+    {
+      "id": 32,
+      "title": "Information Security Analyst/Specialist",
+      "description": "Protects IT infrastructure from intentional or unintentional breaches, detects threats, reports on incidents, and recommends security enhancements."
+    },
+    {
+      "id": 33,
+      "title": "Junior Network Architect",
+      "description": "Assists in implementing and testing network solutions, builds and tests updates, and follows documentation procedures."
+    },
+    {
+      "id": 34,
+      "title": "IT Technician",
+      "description": "Sets up, manages, and troubleshoots technology systems in an organization, providing technical support."
+    }
+  ]
+}
