@@ -1,28 +1,57 @@
-import type { DepartmentEmployee } from "../components/employee-list/EmployeeForm";
-import { departments } from "../data/employees.json";
+import type { Dept } from "../services/employee";
 
-export function getEmployee() {
-  return departments;
-}
-
-export async function createNewDept(employee: DepartmentEmployee) {
-  const normalizedEmployee = {
-    ...employee,
-    id: typeof employee.id === "string" ? Number(employee.id) : employee.id,
-  };
-  departments.push(normalizedEmployee);
-  return normalizedEmployee;
-}
-export async function updateDepartment(dept: DepartmentEmployee) {
-  const foundRoleIndex = departments.findIndex((t) => t.id == dept.id);
-
-  if (foundRoleIndex === -1) {
-    throw new Error(`Failed to update role with ${dept.id}`);
+export const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api`;
+export async function getEmployee() {
+  const response = await fetch(`${BASE_URL}/employee`);
+  if (!response.ok) {
+    throw new Error("Failed to fetch role");
   }
+  const json = await response.json();
+  return json;
+}
 
-  departments[foundRoleIndex] = {
-    ...dept,
-    id: typeof dept.id === "string" ? Number(dept.id) : dept.id,
-  };
-  return departments[foundRoleIndex];
+export async function createNewDept(employee: Dept) {
+  const response = await fetch(`${BASE_URL}/employee/create`, {
+    method: "POST",
+    body: JSON.stringify({ ...employee }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (!response.ok) {
+    throw new Error("Failed to fetch employee");
+  }
+  const json = await response.json();
+  return json;
+}
+export async function updateDepartment(dept: Dept) {
+  const updateResponse: Response = await fetch(
+    `${BASE_URL}/employee/update/${dept.id}`,
+    {
+      method: "PUT",
+
+      body: JSON.stringify({ ...dept }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  if (!updateResponse.ok) {
+    throw new Error(`Failed to update Role with id ${dept.id}`);
+  }
+  const json = await updateResponse.json();
+  return json;
+}
+export async function deleteDepartment(id: string | number) {
+  const employeeResponse: Response = await fetch(
+    `${BASE_URL}/employee/delete/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
+
+  if (!employeeResponse.ok) {
+    throw new Error(`Failed to fetch employee with id ${id}`);
+  }
 }
