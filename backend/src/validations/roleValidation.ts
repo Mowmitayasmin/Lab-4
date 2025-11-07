@@ -11,3 +11,8 @@ export const roleSchema = Joi.object({
   title: requiredString("Title"),
   description: requiredString("Description"),
 }).options({ allowUnknown: true });
+export const employeeSchema = Joi.object({
+  id: Joi.string().optional(),
+  department: requiredString("Department"),
+  employees: requiredString("employees"),
+}).options({ allowUnknown: true });
