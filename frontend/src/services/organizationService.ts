@@ -6,7 +6,10 @@ export async function fetchRoles() {
   return roles;
 }
 
-export async function createNewRole(role: Organizationdata) {
+export async function createNewRole(role: {
+  title: string;
+  description: string;
+}) {
   return await OrganizationRepo.createNewRole(role);
 }
 
@@ -28,7 +31,7 @@ export async function ValidateRole(role: Organizationdata) {
       "description",
       "Description must be at least 3 characters long"
     );
-  if (roles.some((r) => r.title === role.title)) {
+  if (roles.some((r: { title: string }) => r.title === role.title)) {
     validationErrors.set("title", "Role already exists");
   }
   return validationErrors;

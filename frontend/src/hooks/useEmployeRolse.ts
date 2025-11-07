@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 import * as EmployeeService from "../services/employee";
-import type { EmployeeDepartment } from "../components/employee-list/EmployeeList";
+import { toast } from "react-toastify";
+import type { DepartmentEmployee } from "../components/employee-list/EmployeeForm";
 const useEmployeRolse = (dependencies: unknown[]) => {
   const [searchStr, setSearchstr] = useState("");
   const [error, setError] = useState<string | null>();
   const [departmentEmployee, setDepartmentEmployee] = useState<
-    EmployeeDepartment[]
+    DepartmentEmployee[]
   >([]);
   const filteredDepartments = departmentEmployee
     .map((dept) => {
@@ -26,7 +27,7 @@ const useEmployeRolse = (dependencies: unknown[]) => {
       };
     })
     .filter((dept) => dept.matchesDepartment || dept.employees.length > 0)
-    .map(({ matchesDepartment, ...rest }) => rest);
+    .map(({ ...rest }) => rest);
 
   const fetchDept = async () => {
     try {
@@ -36,6 +37,19 @@ const useEmployeRolse = (dependencies: unknown[]) => {
       setError(`${errorObject}`);
     }
   };
+  const handleDeleteEmployee = async (id: number | string | undefined) => {
+    if (!id) return;
+    setDepartmentEmployee((prev) => prev.filter((e) => e.id !== id));
+    await EmployeeService.deleteEmployee(id);
+    toast("Successfully deleted Role!", {
+      position: "bottom-center",
+      theme: "light",
+      hideProgressBar: true,
+      closeButton: false,
+      autoClose: 2500,
+    });
+  };
+
   useEffect(() => {
     fetchDept();
   }, [...dependencies]);
@@ -47,6 +61,7 @@ const useEmployeRolse = (dependencies: unknown[]) => {
     searchStr,
     setDepartmentEmployee,
     fetchDept,
+    handleDeleteEmployee,
   };
 };
 

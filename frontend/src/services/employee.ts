@@ -1,21 +1,27 @@
 import * as employeeRepo from "../apis/employeeRepo";
-import type { EmployeeDepartment } from "../components/employee-list/EmployeeList";
-
-
+import type { DepartmentEmployee } from "../components/employee-list/EmployeeForm";
+export interface Dept {
+  id?: number | string | undefined;
+  department: string;
+  employees: string;
+}
 export async function fetchEmployee() {
   const employee = await employeeRepo.getEmployee();
   return employee;
 }
 
-export async function createNewDept(dept: EmployeeDepartment) {
+export async function createNewDept(dept: Dept) {
   return await employeeRepo.createNewDept(dept);
 }
 
-export async function updateDepartment(dept: EmployeeDepartment) {
+export async function updateDepartment(dept: Dept) {
   return await employeeRepo.updateDepartment(dept);
 }
+export async function deleteEmployee(id: string | number) {
+  return await employeeRepo.deleteDepartment(id);
+}
 
-export async function ValidateDept(dept: EmployeeDepartment) {
+export async function ValidateDept(dept: DepartmentEmployee) {
   const validationErrors = new Map<string, string>();
   const existingDepartments = await employeeRepo.getEmployee();
   if (dept.department.trim().length < 3) {
@@ -27,7 +33,7 @@ export async function ValidateDept(dept: EmployeeDepartment) {
 
   if (
     existingDepartments.some(
-      (d) =>
+      (d: DepartmentEmployee) =>
         d.department?.toLowerCase() === dept.department?.trim().toLowerCase()
     )
   ) {
@@ -36,7 +42,7 @@ export async function ValidateDept(dept: EmployeeDepartment) {
 
   const employeeNames = new Set<string>();
 
-  dept.employees?.forEach((emp, index) => {
+  dept.employees?.forEach((emp) => {
     if (!emp.name || emp.name.trim().length < 3) {
       validationErrors.set(
         `employee`,

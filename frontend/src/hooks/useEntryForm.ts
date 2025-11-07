@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import * as OrganizationService from "../services/organizationService";
 
 export interface Organizationdata {
-  id?: string | number;
+  id: string | number;
   title: string;
   description: string;
 }
@@ -13,7 +13,7 @@ export function useEntryForm(dependencies: unknown[]) {
     []
   );
 
-  const filteredData = organizationdata.filter((item) =>
+  const filteredData  = organizationdata.filter((item) =>
     item.title.toLowerCase().includes(searchStr.toLowerCase())
   );
   const [error, setError] = useState<string | null>();
