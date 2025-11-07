@@ -5,6 +5,7 @@ import setupSwagger from "./config/swagger";
 import corsOptions from "./config/cors";
 import { useExpressServer } from "routing-controllers";
 import { RoleController } from "./controller/roleController";
+import { EmployeeController } from "./controller/employeeController";
 // import cors from "cors";
 
 const app: Express = express();
@@ -16,7 +17,7 @@ app.use(morgan("combined"));
 // setup the controllers and use the /api/v1 prefix for the routes
 useExpressServer(app, {
   routePrefix: "/api",
-  controllers: [RoleController],
+  controllers: [RoleController, EmployeeController],
   cors: corsOptions,
   defaultErrorHandler: false,
 });
