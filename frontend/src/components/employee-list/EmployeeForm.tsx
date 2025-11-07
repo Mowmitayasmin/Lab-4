@@ -10,14 +10,14 @@ interface Employee {
 }
 
 export interface DepartmentEmployee {
-  id: number;
+  id?: number | string | undefined;
   department: string;
   employees: Employee[];
 }
 
 interface DepartmentEmployeeFormProps {
   formMode: "create" | "update";
-  id?: number;
+  id?: number | string | undefined;
 }
 
 const DepartmentEmployeeForm = ({
@@ -31,13 +31,22 @@ const DepartmentEmployeeForm = ({
   const [newEmployee, setNewEmployee] = useState("");
   const [errors, setErrors] = useState<Map<string, string>>(new Map());
 
+  const handleDeleteEmployee = async (id: number) => {
+    setEmployees((prev) => prev.filter((e) => e.id !== id));
+  };
   useEffect(() => {
     if (formMode === "update" && id) {
       const fetchDepartment = async () => {
         const editedEmployee = departmentEmployee.find((x) => x.id == id);
         if (editedEmployee) {
           setDepartmentName(editedEmployee.department);
-          setEmployees(editedEmployee.employees);
+          const formattedEmployees: Employee[] = editedEmployee.employees.map(
+            (emp) => ({
+              id: typeof emp === "string" ? Date.now() : emp.id,
+              name: typeof emp === "string" ? emp : emp.name,
+            })
+          );
+          setEmployees(formattedEmployees);
         }
       };
       fetchDepartment();
@@ -54,15 +63,10 @@ const DepartmentEmployeeForm = ({
     setNewEmployee("");
   };
 
-  const handleDeleteEmployee = (id: number) => {
-    setEmployees((prev) => prev.filter((e) => e.id !== id));
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const payload: DepartmentEmployee = {
-      id: id ?? Date.now(),
       department: departmentName.trim(),
       employees,
     };
@@ -70,10 +74,17 @@ const DepartmentEmployeeForm = ({
     setErrors(deptError);
     if (!deptError.size) {
       if (formMode === "create") {
-        await EmployeeService.createNewDept(payload);
+        await EmployeeService.createNewDept({
+          ...payload,
+          employees: JSON.stringify(employees),
+        });
         toast.success(`Department "${departmentName}" created successfully!`);
       } else {
-        await EmployeeService.updateDepartment(payload);
+        await EmployeeService.updateDepartment({
+          ...payload,
+          id: id,
+          employees: JSON.stringify(employees),
+        });
         toast.success(`Department "${departmentName}" updated successfully!`);
       }
       navigate("/employees");
@@ -149,7 +160,7 @@ const DepartmentEmployeeForm = ({
               <span>{emp.name}</span>
               <button
                 type="button"
-                onClick={() => handleDeleteEmployee(emp.id)}
+                onClick={() => handleDeleteEmployee(emp?.id)}
                 className="text-red-500 hover:text-red-700 text-sm"
               >
                 Delete
